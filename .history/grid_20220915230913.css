@@ -447,6 +447,7 @@
     }
 }
 
+/* Tablet - PC low resolution */
 @media (min-width: 740px) and (max-width: 1023px) {
     .wide {
         max-width: 100%;
@@ -454,11 +455,6 @@
     }
 }
 
-@media (min-width: 1024px) {
-    .hide-on-pc {
-        display: none!important;
-    }
-}
 /* > PC low resolution */
 @media (min-width: 1024px) and (max-width: 1239px) {
     .hide-on-pc {
