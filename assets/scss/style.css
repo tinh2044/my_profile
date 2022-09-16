@@ -54,7 +54,7 @@ p {
   color: #fff !important;
 }
 
-.active > a {
+.active {
   color: #fff !important;
 }
 
@@ -703,7 +703,7 @@ section::after {
   }
   .open-icon i {
     font-size: 4rem;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.5);
   }
   .item-on-tablet-mobile {
     padding: 6px 0;

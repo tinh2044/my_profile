@@ -9,20 +9,14 @@ $(document).ready(function() {
     // Handle When Scroll
     function ActiveNavItem() {
         const mainItem = Array.from($('section'))
-        document.onscroll = () => {
-            scroll =    document.documentElement.scrollTop +20
+        // document.onscroll = () => {
+        //     scroll =document.documentElement.scrollTop
+            for (index in mainItem) {
+                console.log(mainItem[index].offsetTop,mainItem[index].offsetTop+mainItem[index].offsetHeight)
+                // if (scroll > mainItem[index].offsetTop) {
 
-            for ( item of mainItem) {
-                    var positionOfItem = item.offsetTop
-                    var topAddHeightOfItem =  item.offsetTop + item.offsetHeight
-                if (scroll > positionOfItem &scroll < topAddHeightOfItem) {
-                    id = item.id
-                    $('.sidebar__nav-item-link').removeClass('active')
-                    $(`a[href="#${id}`).addClass('active')
-                    break 
-                }
                 
-            }
+            // }
         }
     }
     // Handle Toast

@@ -10,16 +10,12 @@ $(document).ready(function() {
     function ActiveNavItem() {
         const mainItem = Array.from($('section'))
         document.onscroll = () => {
-            scroll =    document.documentElement.scrollTop +20
-
-            for ( item of mainItem) {
+            scroll =document.documentElement.scrollTop
+            for (item of mainItem) {
                     var positionOfItem = item.offsetTop
-                    var topAddHeightOfItem =  item.offsetTop + item.offsetHeight
-                if (scroll > positionOfItem &scroll < topAddHeightOfItem) {
-                    id = item.id
-                    $('.sidebar__nav-item-link').removeClass('active')
-                    $(`a[href="#${id}`).addClass('active')
-                    break 
+                    var TopAddHeightOfItem =  item.offsetTop + item.offsetHeight
+                if (scroll > positionOfItem && scroll < TopAddHeightOfItem) {
+                    console.log(item)
                 }
                 
             }

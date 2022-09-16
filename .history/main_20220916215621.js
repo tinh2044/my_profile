@@ -10,17 +10,15 @@ $(document).ready(function() {
     function ActiveNavItem() {
         const mainItem = Array.from($('section'))
         document.onscroll = () => {
-            scroll =    document.documentElement.scrollTop +20
-
-            for ( item of mainItem) {
-                    var positionOfItem = item.offsetTop
-                    var topAddHeightOfItem =  item.offsetTop + item.offsetHeight
-                if (scroll > positionOfItem &scroll < topAddHeightOfItem) {
-                    id = item.id
-                    $('.sidebar__nav-item-link').removeClass('active')
-                    $(`a[href="#${id}`).addClass('active')
-                    break 
-                }
+            scroll =    document.documentElement.scrollTop
+            console.log(scroll)
+            for (item of mainItem) {
+                //     var positionOfItem = item.offsetTop
+                //     var topAddHeightOfItem =  item.offsetTop + item.offsetHeight
+                // if (scroll > positionOfItem) {
+                    // console.dir(item)
+                    // console.log('item',positionOfItem)
+                // }
                 
             }
         }

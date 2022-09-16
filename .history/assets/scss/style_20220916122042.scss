@@ -57,7 +57,7 @@ p {
     color: #fff !important;
 }
 
-.active {
+.active>a {
     color: #fff !important;
 }
 
@@ -774,7 +774,7 @@ section::after {
 
         & i {
             font-size: 4rem;
-            color: rgba(255, 255, 255, 0.5);
+            color: #fff;
         }
     }
 

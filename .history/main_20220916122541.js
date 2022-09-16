@@ -1,30 +1,11 @@
 $(document).ready(function() {
       
     // Handle Active Nav Item 
-    $('.sidebar__nav-item-link').click(function() {
-        $('.sidebar__nav-item-link').removeClass('active');
+    $('.sidebar__nav-item').click(function() {
+        $('.sidebar__nav-item').removeClass('active');
         this.classList.add('active');
 
     })
-    // Handle When Scroll
-    function ActiveNavItem() {
-        const mainItem = Array.from($('section'))
-        document.onscroll = () => {
-            scroll =    document.documentElement.scrollTop +20
-
-            for ( item of mainItem) {
-                    var positionOfItem = item.offsetTop
-                    var topAddHeightOfItem =  item.offsetTop + item.offsetHeight
-                if (scroll > positionOfItem &scroll < topAddHeightOfItem) {
-                    id = item.id
-                    $('.sidebar__nav-item-link').removeClass('active')
-                    $(`a[href="#${id}`).addClass('active')
-                    break 
-                }
-                
-            }
-        }
-    }
     // Handle Toast
     function handleToast() {
         const toast = $('.toast');
@@ -115,9 +96,8 @@ $(document).ready(function() {
         handleToast()
         handleSideBar()
         changeColor()
-        ActiveNavItem()
     }
     
     start()
-    
+
 })

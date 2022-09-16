@@ -10,7 +10,7 @@ $(document).ready(function() {
     function ActiveNavItem() {
         const mainItem = Array.from($('section'))
         document.onscroll = () => {
-            scroll =    document.documentElement.scrollTop +20
+            scroll =    document.documentElement.scrollTop +50
 
             for ( item of mainItem) {
                     var positionOfItem = item.offsetTop

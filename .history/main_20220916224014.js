@@ -9,20 +9,22 @@ $(document).ready(function() {
     // Handle When Scroll
     function ActiveNavItem() {
         const mainItem = Array.from($('section'))
-        document.onscroll = () => {
-            scroll =    document.documentElement.scrollTop +20
+        // document.onscroll = () => {
+        //     scroll =    document.documentElement.scrollTop
 
             for ( item of mainItem) {
-                    var positionOfItem = item.offsetTop
-                    var topAddHeightOfItem =  item.offsetTop + item.offsetHeight
-                if (scroll > positionOfItem &scroll < topAddHeightOfItem) {
-                    id = item.id
-                    $('.sidebar__nav-item-link').removeClass('active')
-                    $(`a[href="#${id}`).addClass('active')
-                    break 
+                //     var positionOfItem = item.offsetTop
+                //     var topAddHeightOfItem =  item.offsetTop + item.offsetHeight
+                // if (scroll > positionOfItem &scroll < topAddHeightOfItem) {
+                //     id = item.id
+                //     console.log(
+                    
+                item.onshow = function() {
+                    console.log(item)
+                }
                 }
                 
-            }
+            // }
         }
     }
     // Handle Toast
