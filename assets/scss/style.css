@@ -213,7 +213,7 @@ section {
 section::after {
   content: '';
   position: absolute;
-  width: calc(100% + 128px);
+  width: calc(300%);
   top: 99%;
   height: 1px;
   background-color: #e5e5e5;
