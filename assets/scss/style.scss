@@ -16,6 +16,8 @@ html {
 
 .app {
     position: relative;
+    overflow: hidden;
+    width: 100%;
 }
 
 p {
@@ -51,7 +53,11 @@ p {
 
 }
 
-.active a {
+.active {
+    color: #fff !important;
+}
+
+.active>a {
     color: #fff !important;
 }
 
@@ -66,6 +72,7 @@ p {
     flex-direction: column;
     align-items: center;
     z-index: 1;
+    transition: background-color 0.15s ease-in;
 
     &__change-color {
         width: 100%;
@@ -85,7 +92,7 @@ p {
             position: absolute;
             top: 60%;
             width: 180px;
-            background-color: rgba(255, 255, 255, 0.75);
+            background-color: rgba(255, 255, 255, 0.5);
             height: 48px;
             left: 8px;
             border-radius: 4px;
@@ -100,7 +107,7 @@ p {
                 content: '';
                 border-width: 10px 8px;
                 border-style: solid;
-                border-color: transparent transparent transparent rgba(255, 255, 255, 0.75);
+                border-color: transparent transparent transparent rgba(255, 255, 255, 0.5);
                 position: absolute;
                 right: -16px;
                 top: 4px
@@ -183,7 +190,7 @@ p {
                 font-size: 1.7rem;
                 padding: 4px;
                 display: block;
-                color: rgba(255, 255, 255, 0.75);
+                color: rgba(255, 255, 255, 0.5);
                 text-decoration: none;
             }
 
@@ -194,6 +201,7 @@ p {
 .main {
     margin-left: 250px;
     width: calc(100% - 250px);
+    overflow: hidden;
 }
 
 .fw-border {
@@ -735,11 +743,8 @@ section::after {
 
 @media (max-width: 1023px) {
     p {
-        width: 500px;
-    }
 
-    section {
-        min-height: 25vh;
+        width: 500px;
     }
 
     .sidebar-on-pc {
@@ -763,9 +768,9 @@ section::after {
     .open-icon {
         width: 40px;
         height: 30px;
-        text-align: end;
-        margin: 24px 0;
-        ;
+        text-align: center;
+        padding: 24px 0;
+        z-index: 10;
 
         & i {
             font-size: 4rem;
@@ -783,6 +788,7 @@ section::after {
 
     .main {
         margin-left: 80px;
+        width: calc(100% - 80px);
     }
 
     .close-icon {
@@ -826,4 +832,95 @@ section::after {
     }
 
 
+}
+
+@media (max-width: 739px) {
+
+    p {
+        max-width: 90%;
+    }
+
+    .sidebar-on-table-mobile {
+        width: 45px;
+    }
+
+    .main {
+        width: calc(100% - 45px);
+        margin-left: 45px;
+        margin-top: 28px;
+
+    }
+
+    .open-icon i {
+        font-size: 3rem;
+    }
+
+    .sidebar-on-pc {
+        width: 210px;
+    }
+
+    .sidebar {
+
+        &__nav-item a {
+            font-size: 2rem;
+        }
+
+        &__option-list {
+            width: 140px;
+            height: 32px;
+            top: 70%;
+        }
+
+        &__option-item {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    section {
+        padding-left: 12px;
+        width: 99%;
+    }
+
+    .item p {
+        height: unset;
+    }
+
+    .about__contact {
+        max-width: 100%;
+
+        &-item {
+            width: 40px;
+            height: 40px;
+
+            & i {
+                font-size: 2.2rem;
+            }
+        }
+    }
+
+    .skills__icons {
+        width: 99%;
+        flex-wrap: wrap;
+
+        & i {
+            margin: 4px 8px;
+        }
+    }
+
+    .toast {
+        top: 4px;
+        right: 4px;
+        height: 42px;
+        width: 185px;
+
+        & p {
+            font-size: 1.31rem;
+            height: 40%;
+        }
+    }
+
+    #the-end #bongo-cat {
+        width: 90%;
+    }
 }
