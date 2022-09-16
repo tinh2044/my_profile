@@ -83,10 +83,6 @@ $(document).ready(function() {
     ]
     
     function changeColor() {
-        var index = JSON.parse(localStorage.getItem('THEME')) || 1
-        color = themeColor[index]
-        document.documentElement.style.setProperty('--pr-cl', color.bgc)
-        document.documentElement.style.setProperty('--border-cl', color.borderColor)
         btnColor = $('.sidebar__option-item')
         // Handle options Color
 
@@ -106,8 +102,8 @@ $(document).ready(function() {
             btnColor.removeClass('active')
             this.classList.add('active')
             type = this.dataset.type
-            jsontype = JSON.stringify(type)
-            localStorage.setItem('THEME',jsontype)
+            console.log(JSON.stringify(type))
+            localStorage.setItem('theme', JSON.stringify(type))
             var color = themeColor[type]
             document.documentElement.style.setProperty('--pr-cl', color.bgc)
             document.documentElement.style.setProperty('--border-cl', color.borderColor)
@@ -121,9 +117,6 @@ $(document).ready(function() {
         handleSideBar()
         changeColor()
         ActiveNavItem()
-
-        
-
     }
     
     start()

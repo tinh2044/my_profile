@@ -83,10 +83,6 @@ $(document).ready(function() {
     ]
     
     function changeColor() {
-        var index = JSON.parse(localStorage.getItem('THEME')) || 1
-        color = themeColor[index]
-        document.documentElement.style.setProperty('--pr-cl', color.bgc)
-        document.documentElement.style.setProperty('--border-cl', color.borderColor)
         btnColor = $('.sidebar__option-item')
         // Handle options Color
 
@@ -122,7 +118,11 @@ $(document).ready(function() {
         changeColor()
         ActiveNavItem()
 
-        
+        //Set theme
+        var index = JSON.parse(localStorage.getItem('THEME')) || 1
+        color = themeColor[index]
+        document.documentElement.style.setProperty('--pr-cl', color.bgc)
+        document.documentElement.style.setProperty('--border-cl', color.borderColor)
 
     }
     
