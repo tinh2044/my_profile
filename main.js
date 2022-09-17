@@ -1,19 +1,12 @@
 $(document).ready(function() {
-      
-    // Handle Active Nav Item 
-    $('.sidebar__nav-item-link').click(function() {
-        $('.sidebar__nav-item-link').removeClass('active');
-        this.classList.add('active');
-
-    })
     // Handle When Scroll
     function ActiveNavItem() {
         const mainItem = Array.from($('section'))
         document.onscroll = () => {
             scroll =    document.documentElement.scrollTop +20
 
-            for ( item of mainItem) {
-                    var positionOfItem = item.offsetTop
+            for ( item of mainItem) { 
+                var positionOfItem = item.offsetTop
                     var topAddHeightOfItem =  item.offsetTop + item.offsetHeight
                 if (scroll > positionOfItem &scroll < topAddHeightOfItem) {
                     id = item.id
@@ -25,6 +18,16 @@ $(document).ready(function() {
             }
         }
     }
+    // Handle mouseover in disabled icon
+    function HandleTooltips() {
+        const icon = $('.skills__icons .disabled')
+        icon.mouseover(function() {
+            this.innerHTML = '<span class="tooltip">Coming soon</span>'
+        })
+        icon.mouseout(function() {
+            $('.tooltip').remove()
+        })
+    } 
     // Handle Toast
     function handleToast() {
         const toast = $('.toast');
@@ -41,14 +44,18 @@ $(document).ready(function() {
     
     // Handle SideBar On TB-MB
     function handleSideBar() {
+        
         $('.open-icon').click(function() {
+            
             $('.sidebar-on-pc').toggleClass('active');
             $('.overlay').toggleClass('active');
+            $('.close-icon').css('display', 'block')
 
         })
         $('.close-icon').click(function() {
             $('.sidebar-on-pc').removeClass('active');
             $('.overlay').removeClass('active');
+            this.style.display = 'none'
 
         })
         
@@ -121,6 +128,7 @@ $(document).ready(function() {
         handleSideBar()
         changeColor()
         ActiveNavItem()
+        HandleTooltips()
 
         
 
