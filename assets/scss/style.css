@@ -206,7 +206,7 @@ section {
   padding: 32px 0 42px 36px;
   min-height: 100vh;
   position: relative;
-  max-width: 100%;
+  max-width: 98%;
   font-family: "Saira Extra Condensed";
 }
 
@@ -435,10 +435,10 @@ section::after {
 
 .project__img {
   display: none;
+  left: -8px;
   width: 130px;
   height: 80px;
   position: absolute;
-  z-index: 1;
   top: -82px;
   border: 3px solid var(--border-cl);
   border-radius: 3px;
@@ -455,7 +455,7 @@ section::after {
   from {
     transform: translateY(15px);
     opacity: 0;
-    z-index: -1;
+    z-index: -4;
   }
   to {
     transform: translateY(0px);
@@ -474,11 +474,7 @@ section::after {
   left: 38%;
 }
 
-.project__me .link {
-  z-index: 4;
-}
-
-.project__me .link:hover ~ .project__img {
+.experience__me .link:hover ~ .project__img {
   display: block;
 }
 
@@ -776,6 +772,7 @@ section::after {
     background-color: rgba(0, 0, 0, 0.15);
     display: none;
     animation: overlay ease-in 0.4s;
+    z-index: 1;
   }
   .active.overlay {
     display: block;
