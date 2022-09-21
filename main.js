@@ -16,7 +16,7 @@ $(document).ready(function () {
   // Handle Scroll
   function handleScroll() {
     scroll = document.documentElement.scrollTop + 20;
-
+    µ;
     for (item of mainItem) {
       var positionOfItem = item.offsetTop;
       var topAddHeightOfItem = item.offsetTop + item.offsetHeight;
