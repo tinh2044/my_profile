@@ -16,7 +16,7 @@ $(document).ready(function () {
   // Handle Scroll
   function handleScroll() {
     scroll = document.documentElement.scrollTop + 20;
-    µ;
+
     for (item of mainItem) {
       var positionOfItem = item.offsetTop;
       var topAddHeightOfItem = item.offsetTop + item.offsetHeight;
@@ -148,3 +148,24 @@ $(document).ready(function () {
 
   start();
 });
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+let index;
+let len = arr.length;
+let b = [];
+
+index = Math.floor(Math.random() * len);
+b.push(arr[index]);
+while (b.length < len) {
+  let check = false;
+  // index = Math.floor(Math.random() * len);
+  // b.push(arr[index]);
+  while (!check) {
+    index = Math.floor(Math.random() * len);
+    if (!b.includes(arr[index])) {
+      b.push(arr[index]);
+    }
+    check = true;
+  }
+}
+console.log(b);
